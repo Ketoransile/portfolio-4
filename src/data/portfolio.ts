@@ -54,7 +54,7 @@ export const personalInfo = {
   location: "Addis Ababa, Ethiopia",
   github: "https://github.com/Ketoransile",
   linkedin: "https://linkedin.com/in/abdi-sileshi-56710a2a6",
-  resume: "https://drive.google.com/file/d/1ewHEq0WvVtWYGblq4clqaiOGmVV_u06k/view?usp=sharing",
+  resume: "https://drive.google.com/file/d/1xmECDTKDCnpkQOQ9j5RfqvHJNqQwTy24/view?usp=sharing",
   bio: [
     "I am Abdi Sileshi Worku, a graduating Software Engineering student who builds full-stack applications with React, Next.js, Node.js, databases, and AI tools.",
     "I like projects that are practical: tools for document search, resume analysis, ecommerce, rental booking, job listings, and real estate discovery. I care about clean interfaces, reliable backend logic, and making the product easy to understand.",
