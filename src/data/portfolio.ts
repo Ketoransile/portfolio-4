@@ -166,6 +166,7 @@ export const projects: Project[] = [
       "Implemented backend translation service and bilingual UI (English/Amharic) across major app flows",
       "Delivered full-stack pitch submission features: document validation, YouTube video support, admin review gates, and auth/compliance fixes",
     ],
+    live: "https://smart-entrepreneurial-pitching-matc-alpha.vercel.app/",
     github: "https://github.com/Mafiv/Smart-Entrepreneurial-Pitching-Matching-System",
   },
   {
