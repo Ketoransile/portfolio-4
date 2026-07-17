@@ -88,6 +88,7 @@ export const highlights = [
 ];
 
 export const projects: Project[] = [
+  /*
   {
     title: "Enterprise Graph RAG",
     type: "Full-Stack AI Platform",
@@ -117,6 +118,7 @@ export const projects: Project[] = [
     live: "https://enterprise-graph-rag.vercel.app/",
     github: "https://github.com/Ketoransile/Enterprise-Graph-Rag",
   },
+  */
   {
     title: "Reveal - AI Conversion Analyzer",
     type: "AI SaaS Product",
