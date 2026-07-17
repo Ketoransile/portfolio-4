@@ -1,6 +1,5 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import {
@@ -14,16 +13,6 @@ import { personalInfo } from "@/data/portfolio";
 import ScrollReveal from "./ScrollReveal";
 
 export default function Hero() {
-  const [roleIndex, setRoleIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = window.setInterval(() => {
-      setRoleIndex((current) => (current + 1) % personalInfo.roles.length);
-    }, 3000);
-
-    return () => window.clearInterval(interval);
-  }, []);
-
   return (
     <section
       id="home"
@@ -34,9 +23,9 @@ export default function Hero() {
         <div className="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
           
           {/* Left: Bio Text */}
-          <div className="order-2 flex-1 text-center md:order-1 md:text-left">
+          <div className="order-2 flex-1 text-left md:order-1">
             <ScrollReveal animation="up" delay={100}>
-              <span className="inline-flex items-center gap-2 border border-border bg-card px-3 py-1 text-[10px] font-mono uppercase tracking-wider text-muted-foreground rounded-none select-none">
+              <span className="inline-flex items-center gap-2 text-[10px] font-mono uppercase tracking-wider text-muted-foreground select-none">
                 <span className="h-1.5 w-1.5 bg-foreground animate-pulse" />
                 status: open to software engineering roles
               </span>
@@ -49,15 +38,9 @@ export default function Hero() {
             </ScrollReveal>
 
             <ScrollReveal animation="up" delay={300} className="mt-3">
-              <div className="flex flex-wrap items-center justify-center gap-2 md:justify-start">
-                <p className="font-display text-lg font-bold text-muted-foreground sm:text-xl">
-                  Software Engineer
-                </p>
-                <span className="hidden md:inline text-muted-foreground/45">•</span>
-                <p className="text-sm font-semibold text-foreground">
-                  {personalInfo.roles[roleIndex]}
-                </p>
-              </div>
+              <p className="font-display text-lg font-bold text-muted-foreground sm:text-xl">
+                Software Engineer specializing in Full-Stack & AI Integrations.
+              </p>
             </ScrollReveal>
 
             <ScrollReveal animation="up" delay={400} className="mt-4.5">
@@ -66,51 +49,50 @@ export default function Hero() {
               </p>
             </ScrollReveal>
 
-            {/* Clean, borderless stats row */}
-            <ScrollReveal animation="up" delay={500} className="mt-6">
-              <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2.5 md:justify-start text-xs font-mono font-bold text-foreground">
-                <div className="flex items-center gap-1.5">
-                  <span className="text-muted-foreground font-normal">projects:</span>
-                  <span>15+</span>
+            {/* Clean, borderless editorial metadata grid */}
+            <ScrollReveal animation="up" delay={500} className="mt-8">
+              <div className="grid grid-cols-2 gap-4 sm:grid-cols-4 text-xs font-mono text-left">
+                <div>
+                  <span className="block text-muted-foreground uppercase tracking-wider text-[10px] mb-1">Specialization</span>
+                  <span className="font-bold text-foreground">Full-Stack & AI</span>
                 </div>
-                <span className="text-border/80 hidden sm:inline">/</span>
-                <div className="flex items-center gap-1.5">
-                  <span className="text-muted-foreground font-normal">experience:</span>
-                  <span>3+ years</span>
+                <div>
+                  <span className="block text-muted-foreground uppercase tracking-wider text-[10px] mb-1">Experience</span>
+                  <span className="font-bold text-foreground">3+ Years</span>
                 </div>
-                <span className="text-border/80 hidden sm:inline">/</span>
-                <div className="flex items-center gap-1.5">
-                  <span className="text-muted-foreground font-normal">academics:</span>
-                  <span>3.89 CGPA @ Adama Science & Tech Univ. (ASTU)</span>
+                <div>
+                  <span className="block text-muted-foreground uppercase tracking-wider text-[10px] mb-1">Academics</span>
+                  <span className="font-bold text-foreground">3.89 CGPA (Software Eng.)</span>
+                </div>
+                <div>
+                  <span className="block text-muted-foreground uppercase tracking-wider text-[10px] mb-1">Location</span>
+                  <span className="font-bold text-foreground">Addis Ababa, Ethiopia</span>
                 </div>
               </div>
             </ScrollReveal>
 
             {/* Unified CTAs and Social Media Row */}
             <ScrollReveal animation="up" delay={600} className="mt-8">
-              <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center md:justify-start">
+              <div className="flex flex-wrap items-center gap-4 text-left">
                 {/* CTA Buttons */}
-                <div className="flex w-full sm:w-auto items-center gap-2">
-                  <Link
-                    href="#projects"
-                    className="group inline-flex h-9.5 flex-1 sm:flex-initial items-center justify-center gap-1.5 bg-foreground px-5 text-xs font-bold text-background hover:opacity-90 active:scale-97 transition-all rounded-none"
-                  >
-                    View My Work
-                    <FiArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
-                  </Link>
+                <div className="flex items-center gap-2">
                   <Link
                     href={personalInfo.resume}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex h-9.5 flex-1 sm:flex-initial items-center justify-center gap-1.5 border border-border bg-card px-5 text-xs font-bold text-muted-foreground hover:border-foreground hover:text-foreground active:scale-97 transition-all rounded-none"
+                    className="inline-flex h-10 items-center justify-center gap-1.5 border border-border bg-card px-5 text-xs font-bold text-muted-foreground hover:border-foreground hover:text-foreground active:scale-95 transition-all rounded-none"
                   >
                     <FiExternalLink className="h-3.5 w-3.5" />
                     Resume
                   </Link>
+                  <Link
+                    href="#projects"
+                    className="group inline-flex h-10 items-center justify-center gap-1.5 bg-foreground px-5 text-xs font-bold text-background hover:opacity-90 active:scale-95 transition-all rounded-none"
+                  >
+                    View Projects
+                    <FiArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
+                  </Link>
                 </div>
-
-                {/* Vertical separator visible on desktop */}
-                <div className="hidden md:block h-6 w-px bg-border mx-1" />
 
                 {/* Social links */}
                 <div className="flex items-center gap-2">
@@ -118,26 +100,26 @@ export default function Hero() {
                     href={personalInfo.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex h-9 w-9 items-center justify-center border border-border bg-card text-muted-foreground transition-all hover:border-foreground hover:text-foreground hover:-translate-y-0.5 rounded-none"
+                    className="flex h-10 w-10 items-center justify-center text-muted-foreground transition-all hover:text-foreground hover:-translate-y-0.5"
                     aria-label="GitHub"
                   >
-                    <FiGithub className="h-4 w-4" />
+                    <FiGithub className="h-4.5 w-4.5" />
                   </Link>
                   <Link
                     href={personalInfo.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex h-9 w-9 items-center justify-center border border-border bg-card text-muted-foreground transition-all hover:border-foreground hover:text-foreground hover:-translate-y-0.5 rounded-none"
+                    className="flex h-10 w-10 items-center justify-center text-muted-foreground transition-all hover:text-foreground hover:-translate-y-0.5"
                     aria-label="LinkedIn"
                   >
-                    <FiLinkedin className="h-4 w-4" />
+                    <FiLinkedin className="h-4.5 w-4.5" />
                   </Link>
                   <Link
                     href={`mailto:${personalInfo.email}`}
-                    className="flex h-9 w-9 items-center justify-center border border-border bg-card text-muted-foreground transition-all hover:border-foreground hover:text-foreground hover:-translate-y-0.5 rounded-none"
+                    className="flex h-10 w-10 items-center justify-center text-muted-foreground transition-all hover:text-foreground hover:-translate-y-0.5"
                     aria-label="Email"
                   >
-                    <FiMail className="h-4 w-4" />
+                    <FiMail className="h-4.5 w-4.5" />
                   </Link>
                 </div>
               </div>
